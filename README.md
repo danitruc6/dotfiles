@@ -64,7 +64,7 @@ sudo pacman -S git python-pip nvim neofetch firefox alacritty exa
  
 ## Nerd fonts
  
-## Trackpad Natura Scrolling
+## Trackpad Natural Scrolling
  
 use xinput
 
@@ -108,3 +108,14 @@ Uselful plugings taken from [here](https://gist.github.com/n1snt/454b879b8f0b799
 	
  -  Replace that line with
 	`plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)`
+
+## Keyboard backlight settings
+Check max brightness
+`cat /sys/class/leds/tpacpi::kbd_backlight/max_brightness`
+
+Change level of bightness
+`echo 1 > /sys/class/leds/tpacpi::kbd_backlight/brightness`
+
+install ` sudo pacman -S brightnessctl` for a tool to control it:
+info of available controls `brightnessctl --device='tpacpi::kbd_backlight' info`
+how to change it: `brightnessctl --device='tpacpi::kbd_backlight' set 1`	
