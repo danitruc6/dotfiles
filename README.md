@@ -70,14 +70,47 @@ use xinput
 
 1. xinput list : to list the devices
 
-Then copy the ID of mouse(or touchpad if on laptop)
-
-2. xinput list-props {ID}
-For examp;e:
-
-Then use xinput set-prop
 ```
-input set-prop 10 320 1
+   ~ xinput list
+⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+⎜   ↳ Synaptics TM3381-002                    	id=12	[slave  pointer  (2)]
+⎜   ↳ TPPS/2 Elan TrackPoint                  	id=13	[slave  pointer  (2)]
+⎜   ↳ Corne Keyboard                          	id=14	[slave  pointer  (2)]
+⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    ↳ Power Button                            	id=6	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=7	[slave  keyboard (3)]
+    ↳ Sleep Button                            	id=8	[slave  keyboard (3)]
+    ↳ Integrated Camera: Integrated C         	id=9	[slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard            	id=10	[slave  keyboard (3)]
+    ↳ ThinkPad Extra Buttons                  	id=11	[slave  keyboard (3)]
+    ↳ Corne Keyboard                          	id=15	[slave  keyboard (3)]
+```
+
+2. Then copy the ID of mouse(or touchpad if on laptop)
+
+3. Use the following command: xinput list-props {ID}, to get the list of properties
+
+```
+   ~ xinput list-props 12
+Device 'Synaptics TM3381-002':
+	Device Enabled (185):	1
+	Coordinate Transformation Matrix (187):	1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+	libinput Tapping Enabled (444):	1
+	libinput Tapping Enabled Default (445):	0
+...
+	libinput Natural Scrolling Enabled (452):	1
+	libinput Natural Scrolling Enabled Default (453):	0
+	libinput Disable While Typing Enabled (454):	1
+	libinput Disable While Typing Enabled Default (455):	1
+...
+```
+4. Look for the Natural Scrolling prop ID.
+
+5.Then use xinput set-prop {ID} {Property-ID} 1 ('1' means enable)
+```
+input set-prop 12 452 1
 ```
 
 ## ZSH config
@@ -117,5 +150,7 @@ Change level of bightness
 `echo 1 > /sys/class/leds/tpacpi::kbd_backlight/brightness`
 
 install ` sudo pacman -S brightnessctl` for a tool to control it:
+
 info of available controls `brightnessctl --device='tpacpi::kbd_backlight' info`
+
 how to change it: `brightnessctl --device='tpacpi::kbd_backlight' set 1`	
