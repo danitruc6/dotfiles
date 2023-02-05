@@ -154,3 +154,20 @@ install ` sudo pacman -S brightnessctl` for a tool to control it:
 info of available controls `brightnessctl --device='tpacpi::kbd_backlight' info`
 
 how to change it: `brightnessctl --device='tpacpi::kbd_backlight' set 1`	
+
+
+## Change keyboard layout using setxkbmap
+You can change the layout using Alt+Shift with the following terminal command:
+
+```
+setxkbmap -layout "us,latam" -option "grp:alt_shift_toggle" &
+```
+However this is not permanent.
+
+In Openbox, add the command to this file and logout and re-login to work.
+```
+~/.config/openbox/autostart
+```
+For BSPWM just add the line to the bspwmrc file.
+
+
