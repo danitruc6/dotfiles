@@ -176,5 +176,9 @@ Or an easiest way using the same windows hotkey Super(Windows) + Space, is to ad
 super + space
   {setxkbmap se, setxkbmap us}
 ```
-
+### Showing keyboard layout in polybar
+Use the polybar [Module: xkeyboard](https://github.com/polybar/polybar/wiki/Module:-xkeyboard), add the module to the modules.ini, and then add the module to the config.init, like this:
+```
+modules-left = ... xkeyboard ...
+```
 
