@@ -170,4 +170,11 @@ In Openbox, add the command to this file and logout and re-login to work.
 ```
 For BSPWM just add the line to the bspwmrc file.
 
+Or an easiest way using the same windows hotkey Super(Windows) + Space, is to add it to the bspwm/sxhkdrc like this:
+```
+# Change keyboard language
+super + space
+  {setxkbmap se, setxkbmap us}
+```
+
 
