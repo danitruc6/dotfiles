@@ -141,6 +141,7 @@ Uselful plugings taken from [here](https://gist.github.com/n1snt/454b879b8f0b799
 	
  -  Replace that line with
 	`plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)`
+- You can omit the zsh-autocomplete, since it's kind of weird how it works
 
 ## Keyboard backlight settings
 Check max brightness
