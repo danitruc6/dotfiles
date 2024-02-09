@@ -182,4 +182,5 @@ Use the polybar [Module: xkeyboard](https://github.com/polybar/polybar/wiki/Modu
 ```
 modules-left = ... xkeyboard ...
 ```
-
+## Loging to github using ssh
+Follow this [guide](https://www.geeksforgeeks.org/using-github-with-ssh-secure-shell/)
