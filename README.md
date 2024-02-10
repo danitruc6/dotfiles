@@ -184,3 +184,15 @@ modules-left = ... xkeyboard ...
 ```
 ## Loging to github using ssh
 Follow this [guide](https://www.geeksforgeeks.org/using-github-with-ssh-secure-shell/)
+
+## How to change shell to Fish (for Macos)
+
+As per this (guide)[https://stackoverflow.com/questions/66724016/my-fish-is-blind-fish-does-not-recognise-any-commands-after-setting-it-as-defa]
+
+```
+$ brew install fish ​
+$ fish
+$ fish_add_path /opt/homebrew/bin
+$ echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
+$ chsh -s /opt/homebrew/bin/fish
+```
